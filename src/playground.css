@@ -1,0 +1,23 @@
+:root { font-family: system-ui, sans-serif; color: #1f2937; background: #f3f4f6; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+.layout { display: grid; grid-template-columns: 240px 1fr; min-height: 100vh; }
+aside { background: #111827; color: #e5e7eb; padding: 16px; display: flex; flex-direction: column; gap: 6px; }
+aside h1 { font-size: 18px; margin: 0 0 8px; }
+aside button { text-align: left; background: transparent; color: inherit; border: 1px solid #374151; border-radius: 6px; padding: 8px; cursor: pointer; }
+aside button.active { background: #2563eb; border-color: #2563eb; }
+aside .hint { margin-top: auto; font-size: 12px; color: #9ca3af; font-family: monospace; }
+main { padding: 24px; }
+.card { background: white; border-radius: 10px; padding: 20px; max-width: 640px; box-shadow: 0 1px 3px rgb(0 0 0 / 0.1); }
+.card label { display: block; margin: 10px 0 4px; }
+.card input, .card select { padding: 6px 8px; border: 1px solid #d1d5db; border-radius: 6px; font-size: 14px; }
+.card button { padding: 6px 12px; border-radius: 6px; border: 1px solid #d1d5db; background: #f9fafb; cursor: pointer; }
+.card button:disabled { opacity: 0.4; cursor: not-allowed; }
+.card button.active { background: #2563eb; color: white; border-color: #2563eb; }
+.row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin: 10px 0; }
+.done { text-decoration: line-through; color: #9ca3af; }
+.error { color: #b91c1c; font-size: 13px; margin: 2px 0 6px; }
+.display { font-size: 40px; font-variant-numeric: tabular-nums; margin: 8px 0; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 10px; }
+.product { border: 1px solid #e5e7eb; border-radius: 8px; padding: 10px; }
+.product h3 { font-size: 14px; margin: 0 0 4px; }
