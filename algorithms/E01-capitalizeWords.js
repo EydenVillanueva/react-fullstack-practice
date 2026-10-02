@@ -10,5 +10,21 @@
  * Run only this exercise:  npx vitest run E01
  */
 export function capitalizeWords(sentence) {
-  // Write your code here
+  let newWord = false
+
+  return sentence.split("").map((item, i) => {
+    if (item === " ") newWord = true;
+    else if (newWord || i === 0) {
+      newWord = false;
+      item = item.toUpperCase();
+    }
+    else item = item.toLowerCase();
+    return item;
+  }).join("")
 }
+
+// export function capitalizeWordsTwo(str) {
+//   return str.split(" ").map(word => 
+//     word.charAt(0).toUpperCase() + word.slice(1)
+//   ).join(" ");
+// }
