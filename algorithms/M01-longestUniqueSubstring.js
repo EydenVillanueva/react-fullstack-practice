@@ -9,7 +9,7 @@
  *
  * Run only this exercise:  npx vitest run M01
  */
-export function longestUniqueSubstring(s) {
+export function longestUniqueSubstringSlow(s) {
   const array = s.split("");
   const substringMap = { };
   let longestSubstringFound = 0;
@@ -33,6 +33,26 @@ export function longestUniqueSubstring(s) {
   return longestSubstringFound;
 }
 
+
+export function longestUniqueSubstring(s) {
+  const ventana = new Set();
+  let izq = 0;
+  let maximo = 0;
+
+  for (let der = 0; der < s.length; der++) {
+    while (ventana.has(s[der])) {
+      ventana.delete(s[izq]);
+      izq++;
+    }
+
+    ventana.add(s[der]);
+    maximo = Math.max(maximo, der - izq + 1);
+  }
+  return maximo;
+}
+
+// [d,v,d,f]
+// d   j
 
 console.log(longestUniqueSubstring("dvdf"))
 console.log(longestUniqueSubstring("xyzxyzyy"));
